@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/archilogic-com/aframe-gblock/6498b71d/dist/gblock.js"></script>
+
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <a-scene physics="debug: true">
+
+        <!--Textures-->
+        <a-assets>
+        </a-assets>
+
+        <!--Environment-->
+        <a-plane static-body position="0 -0.1 18" rotation="-90 0 0" width="1000" height="1000" color="#7BC8A4"></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+
+        <!--Player-->
+
+        <a-entity>
+            <a-camera id="camera" camview jump-ability kinematic-body></a-camera>
+        </a-entity>
+
+        <!--Book-->
+        <a-entity id="book" position="0 0 0" rotation="0 0 0" static-body>
+            <!--<a-animation attribute="position" to="0.05 1 2.5" begin="openBook" dur="2000" direction="alternate"></a-animation>-->
+
+            <a-entity id="book-binding"></a-entity>
+
+            <a-entity id="book-left-container">
+              <a-entity id="book-front-cover"></a-entity>
+
+              <a-entity id="book-left-pages"></a-entity>
+              <!--<a-animation attribute="rotation" to="0 170 0" begin="openBook" dur="2000" direction="alternate"></a-animation>-->
+              <!--<a-animation attribute="position" to=".1 0 0.06" begin="openBook" dur="2000" direction="alternate"></a-animation>-->
+            </a-entity>
+
+            <a-entity id="book-right-container">
+                <a-entity id="book-right-pages"></a-entity>
+
+                <a-entity id="book-back-cover"></a-entity>
+            </a-entity>
+
+        </a-entity>
+
+      <!--Pratik's environment-->
+      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+
+      <!--//Fox-->
+      <a-entity gblock="https://poly.google.com/view/10u8FYPC5Br&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="0.5 0.5 0.5" position ="10 1 0">
+          <a-animation attribute="rotation" dur="50000" easing="linear"
+                              fill="roll" to="360 0 60" repeat="indefinite">
+          </a-animation>
+      </a-entity>
+
+      <!--//Deer-->
+      <a-entity gblock="https://poly.google.com/view/fUo4AIcd8XR&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="0.02 0.02 0.02" position ="-5 2
+      4">
+          <a-animation attribute="rotation" dur="50000" easing="linear"
+                              fill="roll" to="0 0 360" repeat="indefinite">
+          </a-animation>
+
+      </a-entity>
+
+      <!--//Cabin-->
+      <a-entity gblock="https://poly.google.com/view/1GpgtI-C05M&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="0.01 0.01 0.01" position ="-7 0.5 -10"></a-entity>
+
+      <!--//Fire -->
+      <a-entity gblock="https://poly.google.com/view/dxxHpVXHLZg&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="0.5 0.5 0.5" position ="5 0 0">
+          <a-animation attribute="rotation" dur="50000" easing="linear"
+                              fill="forwards" to="0 360 0" repeat="indefinite">
+          </a-animation>
+      </a-entity>
+
+       <!--//Astronaut -->
+      <a-entity gblock="https://poly.google.com/view/dLHpzNdygsg&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="1 1 1" position ="5 7 10">
+
+          <a-animation attribute="rotation" dur="50000" easing="linear"
+                              fill="forwards" to="0 360 0" repeat="indefinite">
+          </a-animation>
+
+      </a-entity>
+
+      <!--//Canoe -->
+      <a-entity gblock="https://poly.google.com/view/0ciipfLS8Nf&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="0.03 0.03 0.03" position ="20 1.5 0"></a-entity>
+
+      <!--//Lighthouse-->
+      <a-entity gblock="https://poly.google.com/view/0t2ZYRBsqX-&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="2 2.5 2" position ="5 3 -50"></a-entity>
+
+      <!--//Pyramid-->
+      <a-entity gblock="https://poly.google.com/view/5fksyItujX1&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="20 20 20" position ="10 -25 -150"></a-entity>
+
+      <!--//Book on Pyramid-->
+      <a-entity gblock="https://poly.google.com/view/0-_UGETLPsX&key=AIzaSyCo_eueMl7xD1R71HPgY4qlqihicfHGYCw" scale ="3 3 3" position ="23 13 -135">
+
+          <a-animation attribute="rotation" dur="50000" easing="linear"
+                              fill="forwards" to="0 360 0" repeat="indefinite">
+          </a-animation>
+
+      </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
